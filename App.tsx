@@ -8,6 +8,8 @@
 import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import GoogleMap from './src/screens/googlemap.tsx';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigation from './src/navigation/Stack/index.tsx';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -17,7 +19,10 @@ function App() {
     //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
     //   <NewAppScreen templateFileName="App.tsx" />
     // </View>
-    <GoogleMap/>
+    <NavigationContainer>
+    {/* <GoogleMap/> */}
+    <StackNavigation/>
+    </NavigationContainer>
   );
 }
 
