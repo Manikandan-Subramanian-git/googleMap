@@ -1,12 +1,29 @@
-import { Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {styles} from "./styles"
+import { ImageBackground } from 'react-native'
+import { RootStackParamsList } from '../../navigation/Root';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const SplashScreen = () => {
+type Props = NativeStackScreenProps<RootStackParamsList, "splashScreen">;
+
+const SplashScreen = (props:Props) => {
+    const {navigation} = props
+    useEffect(()=>{
+       const timer =  setTimeout(()=>{
+            navigation.navigate("home")
+        },2000)
+
+        return ()=>{
+            clearTimeout(timer)
+        }
+
+    },[])
+
   return (
-    <View style={styles.container}>
-      <Text>SplashScreen</Text>
-    </View>
+    // <View style={styles.container}>
+    //   <Text>SplashScreen</Text>
+    // </View>
+    <ImageBackground source={require('../../assets/icons/v859-katie-11.jpg')} style={styles.bgImage} resizeMode='cover'></ImageBackground>
   )
 }
 
