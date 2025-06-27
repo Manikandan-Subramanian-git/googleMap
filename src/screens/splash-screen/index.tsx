@@ -10,7 +10,7 @@ const SplashScreen = (props:Props) => {
     const {navigation} = props
     useEffect(()=>{
        const timer =  setTimeout(()=>{
-            navigation.navigate("home")
+            navigation.navigate("login")
         },2000)
 
         return ()=>{
@@ -23,7 +23,7 @@ const SplashScreen = (props:Props) => {
     // <View style={styles.container}>
     //   <Text>SplashScreen</Text>
     // </View>
-    <ImageBackground source={require('../../assets/icons/v859-katie-11.jpg')} style={styles.bgImage} resizeMode='cover'></ImageBackground>
+    <ImageBackground source={require('../../assets/icons/back4.jpg')} style={styles.bgImage} resizeMode='cover'></ImageBackground>
   )
 }
 
